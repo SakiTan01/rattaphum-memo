@@ -83,23 +83,19 @@
                 </div>
             </div>
 
-            <!-- Header Actions / Logout & Notifications Badge for Admin -->
             <div class="flex items-center gap-3">
-                <!-- Admin Notification Bell Badge -->
                 <div id="admin-notif-container" class="relative hidden">
                     <button onclick="toggleAdminNotifDropdown()" class="relative p-2 bg-indigo-800 hover:bg-indigo-700 rounded-xl text-white transition flex items-center gap-1.5 text-xs border border-indigo-700">
                         <i class="fa-solid fa-bell text-amber-300"></i>
                         <span>แจ้งเตือนคำขอ</span>
                         <span id="admin-notif-badge" class="absolute -top-1 -right-1 bg-rose-500 text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-indigo-900 shadow">0</span>
                     </button>
-                    <!-- Dropdown panel -->
                     <div id="admin-notif-dropdown" class="hidden absolute right-0 mt-2 w-80 bg-white text-slate-800 rounded-2xl shadow-xl border border-slate-200 z-50 p-3 space-y-2 text-xs">
                         <div class="font-bold border-b pb-2 flex justify-between items-center text-slate-700">
                             <span>รายการบันทึกข้อความใหม่จากสาขา</span>
                             <span class="text-[10px] bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full" id="admin-notif-count-text">0 รายการ</span>
                         </div>
                         <div id="admin-notif-list" class="max-h-64 overflow-y-auto space-y-2 divide-y divide-slate-100">
-                            <!-- Populated via JS -->
                         </div>
                     </div>
                 </div>
@@ -118,7 +114,6 @@
     <!-- Main Container -->
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
 
-        <!-- User Info & Feedback Banner for Users -->
         <div id="user-banner" class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 no-print">
             <div class="flex items-center gap-3">
                 <div id="user-avatar" class="w-12 h-12 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-lg shadow-inner">
@@ -142,19 +137,17 @@
             </div>
         </div>
 
-        <!-- Notification Box for Regular Users (Status from Admin) -->
         <div id="user-feedback-section" class="hidden no-print">
             <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 shadow-sm space-y-2">
                 <div class="flex items-center gap-2 text-amber-900 font-bold text-xs uppercase tracking-wider">
                     <i class="fa-solid fa-circle-info text-amber-600"></i> กล่องข้อความแจ้งผลการพิจารณาจากเจ้าหน้าที่พัสดุ / ผู้บริหาร
                 </div>
                 <div id="user-feedback-list" class="space-y-2">
-                    <!-- Populated via JS -->
                 </div>
             </div>
         </div>
 
-        <!-- Tab: Dashboard / Records List -->
+        <!-- Tab: Dashboard -->
         <section id="tab-dashboard" class="space-y-4 no-print">
             <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4 pb-4 border-b border-slate-100">
@@ -186,7 +179,6 @@
                             </tr>
                         </thead>
                         <tbody id="requisitions-table-body" class="divide-y divide-slate-100">
-                            <!-- Populated via JS -->
                         </tbody>
                     </table>
                 </div>
@@ -271,7 +263,7 @@
             </div>
         </section>
 
-        <!-- Tab / Modal: Official Printable Memo View -->
+        <!-- Tab: Printable Memo -->
         <section id="tab-print" class="hidden space-y-4">
             <div class="flex justify-between items-center no-print max-w-3xl mx-auto w-full bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-200">
                 <button onclick="switchTab('dashboard')" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-2">
@@ -284,13 +276,9 @@
                 </div>
             </div>
 
-            <!-- Official Thai Government Memo Document Layout -->
             <div id="printable-memo" class="bg-white max-w-3xl mx-auto p-12 shadow-md border border-slate-200 rounded-2xl text-slate-900 leading-relaxed text-base" style="font-family: 'Sarabun', TH Sarabun PSK, sans-serif;">
-                
-                <!-- หัวข้อบันทึกข้อความ -->
                 <div class="text-center font-bold text-2xl tracking-wide mb-8 pt-2">บันทึกข้อความ</div>
 
-                <!-- Header Info -->
                 <div class="space-y-2 mb-6 text-sm">
                     <div class="flex flex-wrap items-baseline">
                         <span class="font-bold w-28">ส่วนราชการ</span>
@@ -312,12 +300,10 @@
                     </div>
                 </div>
 
-                <!-- Salutation -->
                 <div class="mb-4">
                     เรียน ผู้อำนวยการวิทยาลัยรัตภูมิ
                 </div>
 
-                <!-- Body Paragraphs matching exact official template -->
                 <div class="space-y-4 indent-12 text-justify mb-8 text-sm">
                     <p>
                         ตามที่วิทยาลัยได้อนุมัติงบประมาณในการจัดซื้อวัสดุการสอนให้กับสาขาวิชา <span id="print-dept-body" class="underline decoration-dotted underline-offset-4">....................................................................................</span> ในปีการศึกษา <span id="print-academicyear-body" class="underline decoration-dotted underline-offset-4 font-semibold">............</span> เพื่อใช้เป็นวัสดุในการเรียนการสอน นั้น
@@ -330,7 +316,6 @@
                     </p>
                 </div>
 
-                <!-- Signature Section -->
                 <div class="flex justify-end mt-12">
                     <div class="text-center w-72">
                         <div class="mb-12">(ลงชื่อ)....................................................................</div>
@@ -338,13 +323,12 @@
                         <div>ตำแหน่ง <span id="print-sign-position" class="font-semibold">....................................................................</span></div>
                     </div>
                 </div>
-
             </div>
         </section>
 
     </main>
 
-    <!-- Admin Review Modal (สำหรับให้แอดมินเลือกอนุมัติ/ไม่อนุมัติ และพิมพ์ข้อความส่งหายูสเซอร์) -->
+    <!-- Admin Review Modal -->
     <div id="admin-review-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl p-6 max-w-lg w-full shadow-2xl border border-slate-200 space-y-4 text-sm">
             <div class="flex justify-between items-center border-b pb-3">
@@ -367,7 +351,7 @@
             </div>
             <div>
                 <label class="block text-xs font-semibold text-slate-700 mb-1">ข้อความ / ความเห็นเพิ่มเติมจากแอดมิน (ส่งแจ้งเตือน User):</label>
-                <textarea id="review-comment" rows="3" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="เช่น เอกสารถูกต้องครบถ้วน ออนุมัติงบประมาณเรียบร้อย / หรือ กรุณาแก้ไขยอดเงินให้ตรงกับใบเสนอราคา..."></textarea>
+                <textarea id="review-comment" rows="3" class="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="เช่น เอกสารถูกต้องครบถ้วน อนุมัติงบประมาณเรียบร้อย / หรือ กรุณาแก้ไขยอดเงินให้ตรงกับใบเสนอราคา..."></textarea>
             </div>
             <div class="flex justify-end gap-2 pt-2 border-t">
                 <button onclick="closeAdminReviewModal()" class="px-4 py-2 rounded-xl border text-slate-600 text-xs font-semibold">ยกเลิก</button>
@@ -388,151 +372,46 @@
 
     <!-- Application JavaScript -->
     <script>
-        // System Data Definitions with Passwords (All users set as Head of Department / หัวหน้าสาขาวิชา)
+        // ==========================================
+        // 1. ตั้งค่า API URL สำหรับเชื่อมต่อไปยัง Backend Server
+        // ==========================================
+        // เมื่อคุณขึ้น Cloud/VPS ให้เปลี่ยน URL นี้เป็นโดเมนของคุณ เช่น 'https://api.yourdomain.com/api/requisitions'
+        const API_BASE_URL = 'http://localhost:3000/api/requisitions';
+
         const USERS = [
-            {
-                id: "admin_1",
-                name: "นางสาวมัญชรี ศรีจำลอง",
-                email: "muncharee.s@rmutsv.ac.th",
-                role: "admin",
-                roleName: "เจ้าหน้าที่",
-                department: "สำนักงานผู้อำนวยการ / งานพัสดุ",
-                position: "เจ้าหน้าที่",
-                password: "123"
-            },
-            {
-                id: "user_1",
-                name: "ผู้ช่วยศาสตราจารย์พิเชฐ สุวรรณโณ",
-                email: "pichet.s@rmutsv.ac.th",
-                role: "user",
-                roleName: "หัวหน้าสาขาวิชา",
-                department: "สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล",
-                position: "หัวหน้าสาขาวิชาเทคโนโลยีธุรกิจดิจิทัล",
-                password: "123"
-            },
-            {
-                id: "user_2",
-                name: "อาจารย์อำมรรัตน์ คงกะโชติ",
-                email: "ammonrat.r@rmutsv.ac.th",
-                role: "user",
-                roleName: "หัวหน้าสาขาวิชา",
-                department: "สาขาวิชาการบัญชี",
-                position: "หัวหน้าสาขาวิชาการบัญชี",
-                password: "123"
-            },
-            {
-                id: "user_3",
-                name: "อาจารย์ณัฐิรงค์ กฤตานนท์",
-                email: "nuttirong.k@rmusv.ac.th",
-                role: "user",
-                roleName: "หัวหน้าสาขาวิชา",
-                department: "สาขาวิชาการตลาดดิจิทัล",
-                position: "หัวหน้าสาขาวิชาการตลาดดิจิทัล",
-                password: "123"
-            },
-            {
-                id: "user_4",
-                name: "อาจารย์คฑาวุธ ชุมขวัญ",
-                email: "katawoot.ch@rmusv.ac.th",
-                role: "user",
-                roleName: "หัวหน้าสาขาวิชา",
-                department: "สาขาวิชาช่างไฟฟ้า",
-                position: "หัวหน้าสาขาวิชาช่างไฟฟ้า",
-                password: "123"
-            },
-            {
-                id: "user_5",
-                name: "ผู้ช่วยศาสตราจารย์ประชิต พรหมสุวรรณ",
-                email: "prachit.@rmutsv.ac.th",
-                role: "user",
-                roleName: "หัวหน้าสาขาวิชา",
-                department: "สาขาวิชาช่างยนต์",
-                position: "หัวหน้าสาขาวิชาช่างยนต์",
-                password: "123"
-            },
-            {
-                id: "user_6",
-                name: "ผู้ช่วยศาสตราจารย์เพ็ญนภา เชาวนา",
-                email: "pennapa.c@rmutsv.ac.th",
-                role: "user",
-                roleName: "หัวหน้าสาขาวิชา",
-                department: "สาขาวิชาการบัญชีบัณฑิต",
-                position: "หัวหน้าสาขาวิชาการบัญชีบัณฑิต",
-                password: "123"
-            },
-            {
-                id: "user_7",
-                name: "ผู้ช่วยศาสตราจารย์วันประชา นวนสร้อย",
-                email: "wanpracha.n@rmusv.ac.th",
-                role: "user",
-                roleName: "หัวหน้าสาขาวิชา",
-                department: "สาขาวิชาวิศวกรรมปัญญาประดิษฐ์ประยุกต์",
-                position: "หัวหน้าสาขาวิชาวิศวกรรมปัญญาประดิษฐ์ประยุกต์",
-                password: "123"
-            },
-            {
-                id: "user_8",
-                name: "ผู้ช่วยศาสตราจารย์ธนะวิทย์ ทองวิเชียร",
-                email: "tanawit.t@rmusv.ac.th",
-                role: "user",
-                roleName: "หัวหน้าสาขาวิชา",
-                department: "สาขาวิชาวิศวกรรมเครื่องจักรกลเกษตร",
-                position: "หัวหน้าสาขาวิชาวิศวกรรมเครื่องจักรกลเกษตร",
-                password: "123"
-            },
-            {
-                id: "user_9",
-                name: "ผู้ช่วยศาสตราจารย์ศิวดล นวลนภดล",
-                email: "sivadol.n@rmutsv.ac.th",
-                role: "user",
-                roleName: "หัวหน้าสาขาวิชา",
-                department: "สาขาวิชาวิศวกรรมไฟฟ้า",
-                position: "หัวหน้าสาขาวิชาวิศวกรรมไฟฟ้า",
-                password: "123"
-            }
+            { id: "admin_1", name: "นางสาวมัญชรี ศรีจำลอง", email: "muncharee.s@rmutsv.ac.th", role: "admin", roleName: "เจ้าหน้าที่", department: "สำนักงานผู้อำนวยการ / งานพัสดุ", position: "เจ้าหน้าที่", password: "123" },
+            { id: "user_1", name: "ผู้ช่วยศาสตราจารย์พิเชฐ สุวรรณโณ", email: "pichet.s@rmutsv.ac.th", role: "user", roleName: "หัวหน้าสาขาวิชา", department: "สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล", position: "หัวหน้าสาขาวิชาเทคโนโลยีธุรกิจดิจิทัล", password: "123" },
+            { id: "user_2", name: "อาจารย์อำมรรัตน์ คงกะโชติ", email: "ammonrat.r@rmutsv.ac.th", role: "user", roleName: "หัวหน้าสาขาวิชา", department: "สาขาวิชาการบัญชี", position: "หัวหน้าสาขาวิชาการบัญชี", password: "123" },
+            { id: "user_3", name: "อาจารย์ณัฐิรงค์ กฤตานนท์", email: "nuttirong.k@rmusv.ac.th", role: "user", roleName: "หัวหน้าสาขาวิชา", department: "สาขาวิชาการตลาดดิจิทัล", position: "หัวหน้าสาขาวิชาการตลาดดิจิทัล", password: "123" },
+            { id: "user_4", name: "อาจารย์คฑาวุธ ชุมขวัญ", email: "katawoot.ch@rmusv.ac.th", role: "user", roleName: "หัวหน้าสาขาวิชา", department: "สาขาวิชาช่างไฟฟ้า", position: "หัวหน้าสาขาวิชาช่างไฟฟ้า", password: "123" },
+            { id: "user_5", name: "ผู้ช่วยศาสตราจารย์ประชิต พรหมสุวรรณ", email: "prachit.@rmutsv.ac.th", role: "user", roleName: "หัวหน้าสาขาวิชา", department: "สาขาวิชาช่างยนต์", position: "หัวหน้าสาขาวิชาช่างยนต์", password: "123" },
+            { id: "user_6", name: "ผู้ช่วยศาสตราจารย์เพ็ญนภา เชาวนา", email: "pennapa.c@rmutsv.ac.th", role: "user", roleName: "หัวหน้าสาขาวิชา", department: "สาขาวิชาการบัญชีบัณฑิต", position: "หัวหน้าสาขาวิชาการบัญชีบัณฑิต", password: "123" },
+            { id: "user_7", name: "ผู้ช่วยศาสตราจารย์วันประชา นวนสร้อย", email: "wanpracha.n@rmusv.ac.th", role: "user", roleName: "หัวหน้าสาขาวิชา", department: "สาขาวิชาวิศวกรรมปัญญาประดิษฐ์ประยุกต์", position: "หัวหน้าสาขาวิชาวิศวกรรมปัญญาประดิษฐ์ประยุกต์", password: "123" },
+            { id: "user_8", name: "ผู้ช่วยศาสตราจารย์ธนะวิทย์ ทองวิเชียร", email: "tanawit.t@rmusv.ac.th", role: "user", roleName: "หัวหน้าสาขาวิชา", department: "สาขาวิชาวิศวกรรมเครื่องจักรกลเกษตร", position: "หัวหน้าสาขาวิชาวิศวกรรมเครื่องจักรกลเกษตร", password: "123" },
+            { id: "user_9", name: "ผู้ช่วยศาสตราจารย์ศิวดล นวลนภดล", email: "sivadol.n@rmutsv.ac.th", role: "user", roleName: "หัวหน้าสาขาวิชา", department: "สาขาวิชาวิศวกรรมไฟฟ้า", position: "หัวหน้าสาขาวิชาวิศวกรรมไฟฟ้า", password: "123" }
         ];
 
         let currentUser = null;
         let requisitions = [];
 
-        // Initialize LocalStorage Data
-        function initStorage() {
-            const saved = localStorage.getItem('ratphum_memo_requisitions');
-            if (saved) {
-                try {
-                    requisitions = JSON.parse(saved);
-                } catch (e) {
-                    requisitions = [];
+        // Fetch Data จาก Backend API (พร้อมระบบ Fallback หากต่อ Backend ไม่ได้)
+        async function fetchRequisitions() {
+            try {
+                const response = await fetch(API_BASE_URL);
+                if (response.ok) {
+                    requisitions = await response.json();
+                } else {
+                    throw new Error("Cannot fetch data");
                 }
-            } else {
-                requisitions = [
-                    {
-                        id: "REQ-2569-001",
-                        userId: "user_1",
-                        userName: "ผู้ช่วยศาสตราจารย์พิเชฐ สุวรรณโณ",
-                        department: "สาขาวิชาเทคโนโลยีธุรกิจดิจิทัล",
-                        position: "หัวหน้าสาขาวิชาเทคโนโลยีธุรกิจดิจิทัล",
-                        docNo: "อว ๐๖๕๕.๒๔/๑๐๑",
-                        docDate: "23 กรกฎาคม 2569",
-                        academicYear: "2569",
-                        itemCount: 12,
-                        totalAmount: 25400,
-                        amountText: "(ยี่สิบห้าพันสี่ร้อยบาทถ้วน)",
-                        notes: "จัดซื้ออุปกรณ์คอมพิวเตอร์และสื่อการสอนดิจิทัล",
-                        status: "รอการพิจารณา",
-                        adminComment: "",
-                        createdAt: new Date().toISOString()
-                    }
-                ];
-                saveStorage();
+            } catch (err) {
+                console.warn("API Error, falling back to LocalStorage:", err);
+                const saved = localStorage.getItem('ratphum_memo_requisitions');
+                requisitions = saved ? JSON.parse(saved) : [];
             }
+            renderRequisitions();
+            if (currentUser) updateUserInterface();
         }
 
-        function saveStorage() {
-            localStorage.setItem('ratphum_memo_requisitions', JSON.stringify(requisitions));
-        }
-
-        // Initialize Login Dropdown
         function initLoginSelect() {
             const select = document.getElementById('login-user-select');
             select.innerHTML = '';
@@ -544,7 +423,6 @@
             });
         }
 
-        // Handle Login Submission
         function handleLogin(e) {
             e.preventDefault();
             const selectedId = document.getElementById('login-user-select').value;
@@ -562,14 +440,12 @@
             }
         }
 
-        // Handle Logout
         function handleLogout() {
             currentUser = null;
             document.getElementById('login-overlay').classList.remove('hidden');
             document.getElementById('login-password').value = '';
         }
 
-        // Update UI based on active user
         function updateUserInterface() {
             if (!currentUser) return;
             document.getElementById('current-user-name').textContent = currentUser.name;
@@ -595,7 +471,6 @@
             }
         }
 
-        // Update Admin Notification Dropdown
         function updateAdminNotifications() {
             const pendingReqs = requisitions.filter(r => r.status === "รอการพิจารณา");
             const badge = document.getElementById('admin-notif-badge');
@@ -619,16 +494,13 @@
         }
 
         function toggleAdminNotifDropdown() {
-            const dropdown = document.getElementById('admin-notif-dropdown');
-            dropdown.classList.toggle('hidden');
+            document.getElementById('admin-notif-dropdown').classList.toggle('hidden');
         }
 
-        // Update User Feedback Box (แสดงผลเมื่อแอดมินอนุมัติหรือไม่อนุมัติ)
         function updateUserFeedbackNotifications() {
             const section = document.getElementById('user-feedback-section');
             const list = document.getElementById('user-feedback-list');
             
-            // หาบันทึกข้อความของ User นี้ที่มีการพิจารณาแล้ว หรือส่งคอมเมนต์กลับ
             const myReviewed = requisitions.filter(r => r.userId === currentUser.id && r.status !== "รอการพิจารณา");
 
             if (myReviewed.length === 0) {
@@ -652,7 +524,6 @@
             `).join('');
         }
 
-        // Switch Tabs
         function switchTab(tabName) {
             document.getElementById('tab-dashboard').classList.add('hidden');
             document.getElementById('tab-create').classList.add('hidden');
@@ -666,7 +537,6 @@
             }
         }
 
-        // Thai Baht Text Converter helper
         function ThaiBahtText(num) {
             if (!num || isNaN(num)) return "(ศูนย์บาทถ้วน)";
             const numStr = parseFloat(num).toFixed(2);
@@ -719,7 +589,6 @@
             }
         }
 
-        // Open Create Form
         function openCreateForm(editId = null) {
             const form = document.getElementById('memo-form');
             form.reset();
@@ -751,8 +620,8 @@
             switchTab('create');
         }
 
-        // Handle Form Submit (User submits or updates record -> triggers admin notification)
-        function handleFormSubmit(e) {
+        // ส่งข้อมูลไปยัง API (POST / PUT)
+        async function handleFormSubmit(e) {
             e.preventDefault();
             const editId = document.getElementById('edit-id').value;
             
@@ -769,27 +638,43 @@
                 totalAmount: parseFloat(document.getElementById('total-amount').value),
                 amountText: document.getElementById('amount-text').value,
                 notes: document.getElementById('memo-notes').value,
-                status: "รอการพิจารณา", // รีเซ็ตสถานะเป็นรอตรวจเมื่อมีการสร้าง/แก้ไขใหม่
+                status: "รอการพิจารณา",
                 adminComment: "",
                 createdAt: new Date().toISOString()
             };
 
-            if (editId) {
-                const idx = requisitions.findIndex(r => r.id === editId);
-                if (idx !== -1) {
-                    data.status = requisitions[idx].status; 
-                    requisitions[idx] = data;
-                }
-            } else {
-                requisitions.unshift(data);
-            }
+            try {
+                const url = editId ? `${API_BASE_URL}/${editId}` : API_BASE_URL;
+                const method = editId ? 'PUT' : 'POST';
 
-            saveStorage();
-            showModal("บันทึกและส่งข้อมูลสำเร็จ", "ระบบได้ส่งแจ้งเตือนไปยังเจ้าหน้าที่พัสดุ (แอดมิน) เรียบร้อยแล้ว", "success");
-            switchTab('dashboard');
+                const response = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    await fetchRequisitions();
+                    showModal("บันทึกและส่งข้อมูลสำเร็จ", "ระบบได้ส่งข้อมูลไปยังเซิร์ฟเวอร์เรียบร้อยแล้ว", "success");
+                    switchTab('dashboard');
+                } else {
+                    throw new Error("Server error");
+                }
+            } catch (err) {
+                console.warn("API Error, updating local state:", err);
+                if (editId) {
+                    const idx = requisitions.findIndex(r => r.id === editId);
+                    if (idx !== -1) requisitions[idx] = data;
+                } else {
+                    requisitions.unshift(data);
+                }
+                localStorage.setItem('ratphum_memo_requisitions', JSON.stringify(requisitions));
+                renderRequisitions();
+                showModal("บันทึกในเครื่องสำเร็จ", "เกิดข้อผิดพลาดในการเชื่อมต่อเซิร์ฟเวอร์ ระบบได้บันทึกข้อมูลไว้ในเครื่องชั่วคราว", "success");
+                switchTab('dashboard');
+            }
         }
 
-        // Admin Review Modal Open
         function openAdminReviewModal(id) {
             const req = requisitions.find(r => r.id === id);
             if (!req) return;
@@ -810,28 +695,47 @@
             document.getElementById('admin-review-modal').classList.add('hidden');
         }
 
-        // Submit Admin Review (Admin approves/rejects and sends message back to user)
-        function submitAdminReview() {
+        // บันทึกผลการพิจารณาของ Admin
+        async function submitAdminReview() {
             const id = document.getElementById('review-req-id').value;
             const status = document.getElementById('review-status-select').value;
             const comment = document.getElementById('review-comment').value;
 
-            const idx = requisitions.findIndex(r => r.id === id);
-            if (idx !== -1) {
-                requisitions[idx].status = status;
-                requisitions[idx].adminComment = comment;
-                saveStorage();
+            const target = requisitions.find(r => r.id === id);
+            if (!target) return;
+
+            const updatedData = { ...target, status: status, adminComment: comment };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(updatedData)
+                });
+
+                if (response.ok) {
+                    await fetchRequisitions();
+                    closeAdminReviewModal();
+                    showModal("บันทึกผลพิจารณาสำเร็จ", "ระบบได้ส่งผลการพิจารณาไปยังผู้ใช้งานเรียบร้อยแล้ว", "success");
+                } else {
+                    throw new Error("Server error");
+                }
+            } catch (err) {
+                console.warn("API Error, updating local state:", err);
+                const idx = requisitions.findIndex(r => r.id === id);
+                if (idx !== -1) {
+                    requisitions[idx].status = status;
+                    requisitions[idx].adminComment = comment;
+                    localStorage.setItem('ratphum_memo_requisitions', JSON.stringify(requisitions));
+                }
                 closeAdminReviewModal();
                 renderRequisitions();
-                if (currentUser.role === 'admin') {
-                    updateAdminNotifications();
-                }
-                showModal("บันทึกผลพิจารณาสำเร็จ", "ระบบได้บันทึกผลและส่งข้อความแจ้งเตือนกลับไปยังผู้ใช้งานสาขาเรียบร้อยแล้ว", "success");
+                showModal("บันทึกสำเร็จ (Offline)", "บันทึกข้อมูลลงในเครื่องเรียบร้อยแล้ว", "success");
             }
         }
 
-        // Delete Requisition
-        function deleteRequisition(id) {
+        // ลบข้อมูล (DELETE)
+        async function deleteRequisition(id) {
             const req = requisitions.find(r => r.id === id);
             if (!req) return;
 
@@ -841,15 +745,24 @@
             }
 
             if (confirm("คุณแน่ใจหรือไม่ที่จะลบรายการนี้?")) {
-                requisitions = requisitions.filter(r => r.id !== id);
-                saveStorage();
-                renderRequisitions();
-                if (currentUser.role === 'admin') updateAdminNotifications();
-                showModal("สำเร็จ", "ลบรายการเรียบร้อยแล้ว", "success");
+                try {
+                    const response = await fetch(`${API_BASE_URL}/${id}`, { method: 'DELETE' });
+                    if (response.ok) {
+                        await fetchRequisitions();
+                        showModal("สำเร็จ", "ลบรายการเรียบร้อยแล้ว", "success");
+                    } else {
+                        throw new Error("Server error");
+                    }
+                } catch (err) {
+                    console.warn("API Error, deleting locally:", err);
+                    requisitions = requisitions.filter(r => r.id !== id);
+                    localStorage.setItem('ratphum_memo_requisitions', JSON.stringify(requisitions));
+                    renderRequisitions();
+                    showModal("สำเร็จ", "ลบรายการออกจากเครื่องเรียบร้อยแล้ว", "success");
+                }
             }
         }
 
-        // Print Memo View
         function viewPrintMemo(id) {
             const req = requisitions.find(r => r.id === id);
             if (!req) return;
@@ -871,7 +784,6 @@
             switchTab('print');
         }
 
-        // Render Requisitions Table
         function renderRequisitions() {
             if (!currentUser) return;
             const tbody = document.getElementById('requisitions-table-body');
@@ -879,10 +791,10 @@
             const searchVal = document.getElementById('search-input').value.toLowerCase();
 
             let filtered = requisitions.filter(r => {
-                const matchSearch = r.docNo.toLowerCase().includes(searchVal) || 
-                                    r.department.toLowerCase().includes(searchVal) || 
-                                    r.academicYear.includes(searchVal) ||
-                                    r.userName.toLowerCase().includes(searchVal);
+                const matchSearch = (r.docNo && r.docNo.toLowerCase().includes(searchVal)) || 
+                                    (r.department && r.department.toLowerCase().includes(searchVal)) || 
+                                    (r.academicYear && r.academicYear.includes(searchVal)) ||
+                                    (r.userName && r.userName.toLowerCase().includes(searchVal));
                 
                 if (currentUser.role === 'admin') {
                     return matchSearch;
@@ -916,8 +828,8 @@
                             <div class="text-slate-500 text-[11px]"><i class="fa-solid fa-user-pen"></i> ${r.userName}</div>
                         </td>
                         <td class="p-3 font-medium text-slate-700">${r.academicYear}</td>
-                        <td class="p-3 text-right font-semibold text-slate-700">${r.itemCount.toLocaleString()} รายการ</td>
-                        <td class="p-3 text-right font-bold text-indigo-600">${r.totalAmount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                        <td class="p-3 text-right font-semibold text-slate-700">${(r.itemCount || 0).toLocaleString()} รายการ</td>
+                        <td class="p-3 text-right font-bold text-indigo-600">${(r.totalAmount || 0).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
                         <td class="p-3 text-center">
                             <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${badgeClass} border">${r.status || 'รอการพิจารณา'}</span>
                             ${r.adminComment ? `<div class="text-[10px] text-slate-500 mt-0.5 truncate max-w-[150px] mx-auto" title="${r.adminComment}">💬 ${r.adminComment}</div>` : ''}
@@ -945,7 +857,6 @@
             }).join('');
         }
 
-        // Notification Modal Helper
         function showModal(title, msg, type = 'success') {
             document.getElementById('modal-title').textContent = title;
             document.getElementById('modal-message').textContent = msg;
@@ -964,10 +875,9 @@
             document.getElementById('notification-modal').classList.add('hidden');
         }
 
-        // Initialize App on Load
         window.onload = function() {
-            initStorage();
             initLoginSelect();
+            fetchRequisitions();
         }
     </script>
 </body>
